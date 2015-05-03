@@ -1,0 +1,36 @@
+C:\Users\oshchegula\Desktop\John.SocialClub\CodedUITestProject\bin\Debug\CodedUITestProject.dll
+C:\Users\oshchegula\Desktop\John.SocialClub\CodedUITestProject\bin\Debug\CodedUITestProject.pdb
+C:\Users\oshchegula\Desktop\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.csprojResolveAssemblyReference.cache
+C:\Users\oshchegula\Desktop\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.dll
+C:\Users\oshchegula\Desktop\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.pdb
+C:\Users\А д м и н\Desktop\John.SocialClub\CodedUITestProject\bin\Debug\CodedUITestProject.dll
+C:\Users\А д м и н\Desktop\John.SocialClub\CodedUITestProject\bin\Debug\CodedUITestProject.pdb
+C:\Users\А д м и н\Desktop\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.csprojResolveAssemblyReference.cache
+C:\Users\А д м и н\Desktop\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.dll
+C:\Users\А д м и н\Desktop\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.pdb
+D:\Work\BondWave\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\CodedUITestProject.dll
+D:\Work\BondWave\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\CodedUITestProject.pdb
+D:\Work\BondWave\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\Automation.Library.dll
+D:\Work\BondWave\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Work\BondWave\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\System.Data.dll
+D:\Work\BondWave\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\System.dll
+D:\Work\BondWave\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\System.Drawing.dll
+D:\Work\BondWave\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\System.Windows.Forms.dll
+D:\Work\BondWave\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\WindowsBase.dll
+D:\Work\BondWave\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\Automation.Library.pdb
+D:\Work\BondWave\demoapptests\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.csprojResolveAssemblyReference.cache
+D:\Work\BondWave\demoapptests\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.dll
+D:\Work\BondWave\demoapptests\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.pdb
+C:\demoapp\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\CodedUITestProject.dll
+C:\demoapp\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\CodedUITestProject.pdb
+C:\demoapp\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\Automation.Library.dll
+C:\demoapp\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\demoapp\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\System.Data.dll
+C:\demoapp\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\System.dll
+C:\demoapp\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\System.Drawing.dll
+C:\demoapp\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\System.Windows.Forms.dll
+C:\demoapp\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\WindowsBase.dll
+C:\demoapp\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\Automation.Library.pdb
+C:\demoapp\demoapptests\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.csprojResolveAssemblyReference.cache
+C:\demoapp\demoapptests\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.dll
+C:\demoapp\demoapptests\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.pdb

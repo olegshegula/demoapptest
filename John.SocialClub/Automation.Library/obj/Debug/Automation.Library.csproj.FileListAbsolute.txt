@@ -1,0 +1,17 @@
+C:\demoapp\demoapptests\John.SocialClub\Automation.Library\bin\Debug\Automation.Library.dll.config
+C:\demoapp\demoapptests\John.SocialClub\Automation.Library\bin\Debug\Automation.Library.dll
+C:\demoapp\demoapptests\John.SocialClub\Automation.Library\bin\Debug\Automation.Library.pdb
+C:\demoapp\demoapptests\John.SocialClub\Automation.Library\bin\Debug\Microsoft.CSharp.dll
+C:\demoapp\demoapptests\John.SocialClub\Automation.Library\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\demoapp\demoapptests\John.SocialClub\Automation.Library\bin\Debug\Microsoft.VisualStudio.TestTools.UITest.Extension.dll
+C:\demoapp\demoapptests\John.SocialClub\Automation.Library\bin\Debug\Microsoft.VisualStudio.TestTools.UITesting.dll
+C:\demoapp\demoapptests\John.SocialClub\Automation.Library\bin\Debug\System.dll
+C:\demoapp\demoapptests\John.SocialClub\Automation.Library\bin\Debug\System.Windows.Forms.dll
+C:\demoapp\demoapptests\John.SocialClub\Automation.Library\bin\Debug\System.Xml.dll
+C:\demoapp\demoapptests\John.SocialClub\Automation.Library\bin\Debug\System.Xml.Linq.dll
+C:\demoapp\demoapptests\John.SocialClub\Automation.Library\bin\Debug\WindowsBase.dll
+C:\demoapp\demoapptests\John.SocialClub\Automation.Library\bin\Debug\Microsoft.VisualStudio.TestTools.UITest.Common.dll
+C:\demoapp\demoapptests\John.SocialClub\Automation.Library\bin\Debug\UiaComWrapper.dll
+C:\demoapp\demoapptests\John.SocialClub\Automation.Library\obj\Debug\Automation.Library.csprojResolveAssemblyReference.cache
+C:\demoapp\demoapptests\John.SocialClub\Automation.Library\obj\Debug\Automation.Library.dll
+C:\demoapp\demoapptests\John.SocialClub\Automation.Library\obj\Debug\Automation.Library.pdb
