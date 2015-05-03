@@ -2,5 +2,6 @@
 	<s:Boolean x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=4D57706DA3604B25ACC137474F651AD9/@KeyIndexDefined">True</s:Boolean>
 	<s:Int64 x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=4D57706DA3604B25ACC137474F651AD9/GroupingIndex/@EntryValue">4</s:Int64>
 	
+	
 	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=4D57706DA3604B25ACC137474F651AD9/Name/@EntryValue">CheckHeaderTest</s:String>
 	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=4D57706DA3604B25ACC137474F651AD9/XmlSerializedElements/@EntryValue">&lt;Session&gt;&lt;Elements /&gt;&lt;/Session&gt;</s:String></wpf:ResourceDictionary>

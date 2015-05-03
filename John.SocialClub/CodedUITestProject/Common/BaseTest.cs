@@ -11,7 +11,7 @@ namespace CodedUITestProject.Common
 		public LoginForm LunchApplication()
 		{
 
-            _application = ApplicationUnderTest.Launch(@"C:\demoapp\demoapptests\John.SocialClub\John.SocialClub.Desktop\bin\Debug\John.SocialClub.Desktop.exe");
+            _application = ApplicationUnderTest.Launch(@"C:\demoapptest\John.SocialClub\John.SocialClub.Desktop\bin\Debug\John.SocialClub.Desktop.exe");
             
             return new LoginForm(_application);
 		}

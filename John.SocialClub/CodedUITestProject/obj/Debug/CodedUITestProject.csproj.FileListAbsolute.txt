@@ -34,3 +34,16 @@ C:\demoapp\demoapptests\John.SocialClub\CodedUITestProject\bin\Debug\Automation.
 C:\demoapp\demoapptests\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.csprojResolveAssemblyReference.cache
 C:\demoapp\demoapptests\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.dll
 C:\demoapp\demoapptests\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.pdb
+C:\demoapptest\John.SocialClub\CodedUITestProject\bin\Debug\CodedUITestProject.dll
+C:\demoapptest\John.SocialClub\CodedUITestProject\bin\Debug\CodedUITestProject.pdb
+C:\demoapptest\John.SocialClub\CodedUITestProject\bin\Debug\Automation.Library.dll
+C:\demoapptest\John.SocialClub\CodedUITestProject\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\demoapptest\John.SocialClub\CodedUITestProject\bin\Debug\System.Data.dll
+C:\demoapptest\John.SocialClub\CodedUITestProject\bin\Debug\System.dll
+C:\demoapptest\John.SocialClub\CodedUITestProject\bin\Debug\System.Drawing.dll
+C:\demoapptest\John.SocialClub\CodedUITestProject\bin\Debug\System.Windows.Forms.dll
+C:\demoapptest\John.SocialClub\CodedUITestProject\bin\Debug\WindowsBase.dll
+C:\demoapptest\John.SocialClub\CodedUITestProject\bin\Debug\Automation.Library.pdb
+C:\demoapptest\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.csprojResolveAssemblyReference.cache
+C:\demoapptest\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.dll
+C:\demoapptest\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.pdb
