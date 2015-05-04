@@ -18,54 +18,59 @@ namespace Automation.Library.Logic.Login
 			_app = app;
 		}
 
+        private void WaitLoginFormWindowLoaded()
+        {
+            Tools.WaitControlExists(ParentLoginForm);
+        }
+
 		public LoginForm SetFocus()
 		{
 			ParentLoginForm.WaitForControlExist();
-			Mouse.Click(ParentLoginForm);
+            Tools.Click(ParentLoginForm);
 			return this;
 		}
 
 		public LoginForm SetUserName(string userName)
 		{
-			Keyboard.SendKeys(UserNameFld, userName);
+		    WaitLoginFormWindowLoaded();
+            Tools.SendKeys(UserNameFld, userName);
 			return this;
 		}
 
 		public LoginForm SetPassword(string password)
 		{
-			Keyboard.SendKeys(UserPasswordFld, password);
+		    WaitLoginFormWindowLoaded();
+            Tools.SendKeys(UserPasswordFld, password);
 			return this;
 		}
 
 		public LoginForm SubmitLogin()
 		{
-			Mouse.Click(LoginBttn);
+		    WaitLoginFormWindowLoaded();
+            Tools.Click(LoginBttn);
 			return this;
 		}
 
-        public LoginForm ClickOK()
+        public LoginForm ClickOk()
         {
-
-            Mouse.Click(CloseLoginMessageBttn);
+            WaitLoginFormWindowLoaded();
+            Tools.Click(CloseLoginMessageBttn);
             return this;
         }
-
-               
-
+        
 		public NewRegistrationTab LoginAs(string userName, string password)
 		{
-			Keyboard.SendKeys(UserNameFld, userName);
-			Keyboard.SendKeys(UserPasswordFld, password);
-			Mouse.Click(LoginBttn);
+		    WaitLoginFormWindowLoaded();
+            Tools.SendKeys(UserNameFld, userName);
+			Tools.SendKeys(UserPasswordFld, password);
+			Tools.Click(LoginBttn);
 			return new NewRegistrationTab(_app);
 		}
 
         public LoginForm IsLoginMessageCorrect(string expectedStatusMesage)
         {
-           
             LoginStatusMessage.WaitForControlCondition(control => control.Exists, _timeout.WaitForControl);
             Assert.AreEqual(expectedStatusMesage, LoginStatusMessage.DisplayText);
-                       
             return new LoginForm(_app);
         }
     }

@@ -9,16 +9,14 @@ namespace CodedUITestProject
     /// Summary description for CodedUITests
     /// </summary>
     [CodedUITest]
-    public class CodedUITests : BaseTest
+    public class CodedUiTests : BaseTest
     {
-        public CodedUITests()
-        {
-        }
-
+        
 	    [TestMethod, TestCategory("Test")]
         [Description("Test1: Successful login to application")]
         public void CorrectLoginTest()
 	    {
+            Playback.PlaybackSettings.LoggerOverrideState = HtmlLoggerState.ErrorAndWarningOnlySnapshot;
 		    LunchApplication()
 			    .SetFocus()
 				.LoginAs("demo", "demo123")
@@ -29,19 +27,20 @@ namespace CodedUITestProject
          [Description("Test2: Unsuccessful login without password")]
         public void IncorrectLoginTest()
         {
-
+            Playback.PlaybackSettings.LoggerOverrideState = HtmlLoggerState.ErrorAndWarningOnlySnapshot;
             LunchApplication()
                .SetFocus()
                .SetUserName("demo")
                .SubmitLogin()
 			   .IsLoginMessageCorrect("Please enter a valid username and password.")
-               .ClickOK();
+               .ClickOk();
         }
 
          [TestMethod]
          [Description("Test3: Verifies adding a new member to the club")]
          public void AddClubMemberTest()
          {
+             Playback.PlaybackSettings.LoggerOverrideState = HtmlLoggerState.ErrorAndWarningOnlySnapshot;
 			 LunchApplication()
 				.SetFocus()
 				.LoginAs("demo", "demo123")
@@ -62,7 +61,7 @@ namespace CodedUITestProject
          [Description("Test4: Verifies search results by given Ocupation and Marital parameters")]
          public void SearchSingleDoctorTest()
          {
-
+             Playback.PlaybackSettings.LoggerOverrideState = HtmlLoggerState.ErrorAndWarningOnlySnapshot;
              LunchApplication()
                .SetFocus()
                .LoginAs("demo", "demo123")
@@ -78,7 +77,7 @@ namespace CodedUITestProject
          [Description("Test5: Verifies print preview window after Print preview button click")]
          public void PrintPreviewTest()
          {
-
+             Playback.PlaybackSettings.LoggerOverrideState = HtmlLoggerState.ErrorAndWarningOnlySnapshot;
              LunchApplication()
                .SetFocus()
                .LoginAs("demo", "demo123")
@@ -91,6 +90,7 @@ namespace CodedUITestProject
         [Description("Test6: Verifies that club memeber name is updated by given name parametr")]
 	    public void EditUserNameTest()
 	    {
+            Playback.PlaybackSettings.LoggerOverrideState = HtmlLoggerState.ErrorAndWarningOnlySnapshot;
 		    LunchApplication()
 			    .SetFocus()
 			    .LoginAs("demo", "demo123")
@@ -108,7 +108,8 @@ namespace CodedUITestProject
         [Description("Test7: This test will fail")]
 		public void EditUserNameFailedTest()
 		{
-			Playback.PlaybackSettings.SearchTimeout = 100;
+            Playback.PlaybackSettings.LoggerOverrideState = HtmlLoggerState.ErrorAndWarningOnlySnapshot;
+            Playback.PlaybackSettings.SearchTimeout = 100;
 			LunchApplication()
 				.SetFocus()
 				.LoginAs("demo", "demo123")

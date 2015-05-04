@@ -497,7 +497,15 @@ namespace Automation.Library.ObjectRepository.Membership
 			}
 		}
 
+        //protected UITestControl StrategicAccountsWindowTableWnd
+        //{
+        //    get
+        //    {
+        //        return _strategyTableWnd ?? (_strategyTableWnd = UITestControl.Desktop.Find<WinWindow>(new { ControlName = "dbgDetails" }));
+        //    }
+        //}
 
+        #region Private Variables
         private WinWindow _newRegistrationWindow;
 		private WinTabPage _newRegistrationTab;
 		private WinTabPage _newMemberTab;
@@ -526,12 +534,12 @@ namespace Automation.Library.ObjectRepository.Membership
         private WinButton _searchBttn;
         private WinWindow _resultTableWindow;
         private WinTable _tableControl;
-
 		private WinWindow _updateWindow;
 		private WinButton _updateBttn;
-
 		private WinWindow _updateSuccessfullPopUpForm;
 		private WinText _updateSuccessfullPopUpMessage;
 		private WinButton _closeUpdateMessageBttn;
+        #endregion Private Variables
+
     }
 }

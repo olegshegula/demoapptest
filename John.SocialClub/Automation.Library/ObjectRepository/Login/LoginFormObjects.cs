@@ -119,15 +119,15 @@ namespace Automation.Library.ObjectRepository.Login
                 return _closeLoginMessageBttn;
             }
         }
-
+        #region Private Variables
         private WinButton _closeLoginMessageBttn;
         private WinWindow _loginPopUpForm;
-
 		private WinWindow _parentLoginForm;
 		private WinEdit _userNameFld;
 		private WinWindow _userPasswordWnd;
 		private WinEdit _userPasswordFld;
 		private WinButton _loginBttn;
         private WinText _loginStatusMessage;
-	}
+        #endregion Private Variables
+    }
 }
