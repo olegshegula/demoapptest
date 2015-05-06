@@ -32,3 +32,6 @@ C:\demoapptest\John.SocialClub\Automation.Library\bin\Debug\UiaComWrapper.dll
 C:\demoapptest\John.SocialClub\Automation.Library\obj\Debug\Automation.Library.csprojResolveAssemblyReference.cache
 C:\demoapptest\John.SocialClub\Automation.Library\obj\Debug\Automation.Library.dll
 C:\demoapptest\John.SocialClub\Automation.Library\obj\Debug\Automation.Library.pdb
+C:\demoapptest\John.SocialClub\Automation.Library\bin\Debug\Microsoft.Services.TestTools.UITesting.Html.dll
+C:\demoapptest\John.SocialClub\Automation.Library\bin\Debug\Microsoft.Services.TestTools.UITesting.Html.pdb
+C:\demoapptest\John.SocialClub\Automation.Library\bin\Debug\Microsoft.Services.TestTools.UITesting.Html.xml

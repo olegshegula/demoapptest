@@ -63,7 +63,12 @@ namespace Automation.Library.Logic.Login
 		    WaitLoginFormWindowLoaded();
             Tools.SendKeys(UserNameFld, userName);
 			Tools.SendKeys(UserPasswordFld, password);
-			Tools.Click(LoginBttn);
+
+		    var allLoginElements = LoginBttnWnd.GetChildren();
+		    var loginBttn = allLoginElements.First(el => el.Name.Equals("Login"));
+            loginBttn.DrawHighlight();
+            Tools.Click(loginBttn);
+            //Tools.Click(LoginBttn);
 			return new NewRegistrationTab(_app);
 		}
 

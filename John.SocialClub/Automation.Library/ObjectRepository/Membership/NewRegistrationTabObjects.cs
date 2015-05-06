@@ -497,14 +497,7 @@ namespace Automation.Library.ObjectRepository.Membership
 			}
 		}
 
-        //protected UITestControl StrategicAccountsWindowTableWnd
-        //{
-        //    get
-        //    {
-        //        return _strategyTableWnd ?? (_strategyTableWnd = UITestControl.Desktop.Find<WinWindow>(new { ControlName = "dbgDetails" }));
-        //    }
-        //}
-
+       
         #region Private Variables
         private WinWindow _newRegistrationWindow;
 		private WinTabPage _newRegistrationTab;

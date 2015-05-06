@@ -1,0 +1,5 @@
+C:\demoapptest\John.SocialClub\CalculatorTest\bin\Debug\CalculatorTest.dll
+C:\demoapptest\John.SocialClub\CalculatorTest\bin\Debug\CalculatorTest.pdb
+C:\demoapptest\John.SocialClub\CalculatorTest\obj\Debug\CalculatorTest.csprojResolveAssemblyReference.cache
+C:\demoapptest\John.SocialClub\CalculatorTest\obj\Debug\CalculatorTest.dll
+C:\demoapptest\John.SocialClub\CalculatorTest\obj\Debug\CalculatorTest.pdb

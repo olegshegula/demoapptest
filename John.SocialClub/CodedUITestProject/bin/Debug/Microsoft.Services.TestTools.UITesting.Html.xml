@@ -1,0 +1,894 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Services.TestTools.UITesting.Html</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Services.TestTools.UITesting.Html.ApplicationAttribute">
+            <summary>
+            Use the ApplicationPathAttribute to specify an alternative application path to be used by the <see cref="T:Microsoft.Services.TestTools.UITesting.Html.Page"/> launcher.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.ApplicationAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Services.TestTools.UITesting.Html.ApplicationAttribute"/> class.
+            </summary>
+            <param name="application"></param>
+        </member>
+        <member name="P:Microsoft.Services.TestTools.UITesting.Html.ApplicationAttribute.Application">
+            <summary>
+            Gets the name of the base Uri.
+            </summary>
+            <value>
+            The name of the base Uri.
+            </value>
+        </member>
+        <member name="T:Microsoft.Services.TestTools.UITesting.Html.IWebUITestConfiguration">
+            <summary>
+            Web UI Test Configuration
+            </summary>
+            <remarks>
+            Export a type in your test project that inherits 
+            IWebUITestConfiguration in order to provide a 
+            base address for your <see cref="T:Microsoft.Services.TestTools.UITesting.Html.Page"/> objects.
+            </remarks>
+            <example>
+            <code>
+            [Export(typeof(IWebUITestConfiguration))]
+            public class TestConfiguration : IWebUITestConfiguration {
+               public Uri GetBaseUri(string name) {
+                  if (name == "Intra") {
+                     return new Uri("http://intranet.contoso.local");
+                   }
+                   return new Uri("http://www.contoso.local");
+               }
+            }
+            </code>
+            </example>
+            <seealso cref="T:Microsoft.Services.TestTools.UITesting.Html.BaseUriAttribute"/>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.IWebUITestConfiguration.GetBaseUri(System.String)">
+            <summary>
+            Gets the base Uri
+            </summary>
+            <param name="name">
+            The name of the Uri.
+            </param>
+            <returns>
+            The base Uri
+            </returns>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.IWebUITestConfiguration.GetApplicationPath(System.String)">
+            <summary>
+            Gets the application exe path
+            </summary>
+            <param name="application">
+            The name of the page to open.
+            </param>
+            <returns>
+            The application exe path
+            </returns>
+        </member>
+        <member name="T:Microsoft.Services.TestTools.UITesting.Html.ObjectExtensions">
+            <summary>
+            <see cref="T:System.Object"/> extension methods
+            </summary>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.ObjectExtensions.ForEachProperty(System.Object,System.Action{System.String,System.String})">
+            <summary>
+            Executes the provided <see cref="T:System.Action"/> for each public property on the object.
+            It passes the name and the value of the property to the action.
+            </summary>
+            <param name="self">The self.</param>
+            <param name="action">The action.</param>
+        </member>
+        <member name="T:Microsoft.Services.TestTools.UITesting.Html.Page">
+            <summary>
+            Page Object base class
+            </summary>
+            <remarks>
+            Use this base class to simplify the implementation of the Page Object pattern.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.Page.Launch``1">
+            <summary>
+            Launches the specified page.
+            </summary>
+            <typeparam name="T">The Page to launch</typeparam>
+            <returns>The launched page</returns>
+            <example>
+            Launch the home page.
+            <code>
+            <![CDATA[
+            var home = Page.Launch<Home>();
+            ]]>
+            </code>
+            </example>
+            <seealso cref="T:Microsoft.Services.TestTools.UITesting.Html.EntryUriAttribute"/>
+            <seealso cref="T:Microsoft.Services.TestTools.UITesting.Html.BaseUriAttribute"/>
+            <seealso cref="T:Microsoft.Services.TestTools.UITesting.Html.ClearCookiesAttribute"/>
+            <seealso cref="T:Microsoft.Services.TestTools.UITesting.Html.ClearCacheAttribute"/>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.Page.LaunchWindow``1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.Page.LaunchWindow``1(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="applicationPath"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.Page.Launch``1(System.Boolean,System.Boolean)">
+            <summary>
+            Launches the specified page.
+            </summary>
+            <typeparam name="T">The Page to launch</typeparam>
+            <param name="clearCookies">if set to <c>true</c> [clear cookies].</param>
+            <param name="clearCache">if set to <c>true</c> [clear cache].</param>
+            <returns>
+            The launched page
+            </returns>
+            <example>
+             Launch the home page and override any 
+            <see cref="T:Microsoft.Services.TestTools.UITesting.Html.ClearCacheAttribute"/> and <see cref="T:Microsoft.Services.TestTools.UITesting.Html.ClearCookiesAttribute"/>
+            <code>
+            <![CDATA[
+            var home = Page.Launch<Home>(false,true);
+            ]]>
+            </code>
+            </example>
+            <seealso cref="T:Microsoft.Services.TestTools.UITesting.Html.EntryUriAttribute"/>
+            <seealso cref="T:Microsoft.Services.TestTools.UITesting.Html.BaseUriAttribute"/>
+            <seealso cref="T:Microsoft.Services.TestTools.UITesting.Html.ClearCookiesAttribute"/>
+            <seealso cref="T:Microsoft.Services.TestTools.UITesting.Html.ClearCacheAttribute"/>
+            <remarks>
+            Ignores the <see cref="T:Microsoft.Services.TestTools.UITesting.Html.ClearCookiesAttribute"/> and <see cref="T:Microsoft.Services.TestTools.UITesting.Html.ClearCacheAttribute"/>
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.Page.Launch``1(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="url"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.Page.ShouldClearCache``1">
+            <summary>
+            Checks if the current page is decorated with the ClearCacheAttribute.
+            </summary>
+            <typeparam name="T">The type of the page</typeparam>
+            <returns>True if the browser cache should be cleared</returns>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.Page.ShouldClearCookies``1">
+            <summary>
+            Checks if the current page is decorated with the ClearCookiesAttribute.
+            </summary>
+            <typeparam name="T">The type of the page</typeparam>
+            <returns>True if the browser cookies should be cleared</returns>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.Page.HasAttribute``2">
+            <summary>
+            Determines whether the page has the specified attribute.
+            </summary>
+            <typeparam name="T">The page type</typeparam>
+            <typeparam name="A">The attribute type</typeparam>
+            <returns>
+              <c>true</c> if this instance has attribute; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.Page.GetAttribute``2">
+            <summary>
+            Gets the attribute.
+            </summary>
+            <typeparam name="T">The page type</typeparam>
+            <typeparam name="A">The attribute type</typeparam>
+            <returns>The attribute</returns>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.Page.GetLaunchUri``1(``0)">
+            <summary>
+            Gets the launch Uri for the specified page.
+            </summary>
+            <typeparam name="T">The page type</typeparam>
+            <param name="page">The page.</param>
+            <returns>The launch Uri</returns>
+        </member>
+        <member name="F:Microsoft.Services.TestTools.UITesting.Html.Page._container">
+            <summary>
+            MEF composition container. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.Page.LoadConfiguration``1(``0)">
+            <summary>
+            Initializes the composition container and loads the configuration
+            </summary>
+            <param name="page">
+            The page.
+            </param>
+            <typeparam name="T">The page type</typeparam>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.Page.NavigatedTo``1">
+            <summary>
+            Returns a new page instance and forwards the browser instance to the new page.
+            </summary>
+            <typeparam name="T">The <see cref="T:Microsoft.Services.TestTools.UITesting.Html.Page"/> that the parent <see cref="T:Microsoft.Services.TestTools.UITesting.Html.Page"/> navigated to</typeparam>
+            <returns>The page that was navigated to</returns>
+            <example>
+            Clicking on the Home button should havigate back to home.
+            Instead of launching Home, use NavigatedTo.
+            <code>
+            <![CDATA[
+            Browser.ClickOnButton("Home");
+            return NavigatedTo<Home>();
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.Page.Refresh">
+            <summary>
+            Refreshes this instance.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.Page.Close">
+            <summary>
+            Closes this instance.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Services.TestTools.UITesting.Html.Page.TestConfiguration">
+            <summary>
+            Gets or sets the test configuration.
+            </summary>
+            <value>
+            The test configuration.
+            </value>
+            <seealso cref="T:Microsoft.Services.TestTools.UITesting.Html.IWebUITestConfiguration"/>
+        </member>
+        <member name="P:Microsoft.Services.TestTools.UITesting.Html.Page.Browser">
+            <summary>
+            Gets or sets the browser.
+            </summary>
+            <value>
+            The browser.
+            </value>
+        </member>
+        <member name="P:Microsoft.Services.TestTools.UITesting.Html.Page.Window">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Microsoft.Services.TestTools.UITesting.Html.PageTest`1">
+            <summary>
+            Base class used to simplify tests utilizing <see cref="T:Microsoft.Services.TestTools.UITesting.Html.Page"/>'s
+            </summary>
+            <typeparam name="T">The <see cref="T:Microsoft.Services.TestTools.UITesting.Html.Page"/> to launch and close</typeparam>
+            <example>
+            The test initialize and cleanup handles the 
+            launching and closing of the Page instance
+            <code>
+            <![CDATA[
+            [CodedUITest]
+            public class HomeTests : PageTest<Home> {
+            
+                [TestMethod]
+                public void MainMenuContainsHome() {
+                    Assert.IsTrue(TestedPage.MainMenuContainsItem("Home"));
+                }
+            }
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.PageTest`1.Initialize">
+            <summary>
+            Initializes this instance.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.PageTest`1.Cleanup">
+            <summary>
+            Cleanups this instance.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Services.TestTools.UITesting.Html.PageTest`1._stringCreator">
+            <summary>
+            The string creator
+            </summary>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.PageTest`1.Name">
+            <summary>
+            Generates a name
+            </summary>
+            <returns>A randomized name</returns>
+            <remarks>Form input helper</remarks>
+            <seealso cref="P:Microsoft.Services.TestTools.UITesting.Html.PageTest`1.StringCreator"/>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.PageTest`1.Amount">
+            <summary>
+            Generates an amount
+            </summary>
+            <returns>A random amount</returns>
+            <remarks>Form input helper</remarks>
+            <seealso cref="P:Microsoft.Services.TestTools.UITesting.Html.PageTest`1.StringCreator"/>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.PageTest`1.Email">
+            <summary>
+            Generates an email address
+            </summary>
+            <returns>A random email address</returns>
+            <remarks>Form input helper</remarks>
+            <seealso cref="P:Microsoft.Services.TestTools.UITesting.Html.PageTest`1.StringCreator"/>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.PageTest`1.Password">
+            <summary>
+            Generates a password
+            </summary>
+            <returns>A random password</returns>
+            <remarks>Form input helper</remarks>
+            <seealso cref="P:Microsoft.Services.TestTools.UITesting.Html.PageTest`1.StringCreator"/>
+        </member>
+        <member name="P:Microsoft.Services.TestTools.UITesting.Html.PageTest`1.TestedPage">
+            <summary>
+            Gets or sets the tested page.
+            </summary>
+            <value>
+            The tested page.
+            </value>
+        </member>
+        <member name="P:Microsoft.Services.TestTools.UITesting.Html.PageTest`1.StringCreator">
+            <summary>
+            Gets the string creator
+            </summary>
+            <remarks>
+            For most cases the methods Name(), Amount(), Email(), Password() will probably be sufficient.
+            Access this field if you want to generate more specialized strings
+            </remarks>
+        </member>
+        <member name="T:Microsoft.Services.TestTools.UITesting.Html.StringCreator">
+            <summary>
+            Helper class used to generate form input strings
+            </summary>
+        </member>
+        <member name="F:Microsoft.Services.TestTools.UITesting.Html.StringCreator.Upper">
+            <summary>
+            Upper case letters for randomization
+            </summary>
+        </member>
+        <member name="F:Microsoft.Services.TestTools.UITesting.Html.StringCreator.International">
+            <summary>
+            International letters for randomization
+            </summary>
+        </member>
+        <member name="F:Microsoft.Services.TestTools.UITesting.Html.StringCreator.Numbers">
+            <summary>
+            Digits for randomization
+            </summary>
+        </member>
+        <member name="F:Microsoft.Services.TestTools.UITesting.Html.StringCreator.Special">
+            <summary>
+            Special characters for randomization
+            </summary>
+        </member>
+        <member name="F:Microsoft.Services.TestTools.UITesting.Html.StringCreator.Lower">
+            <summary>
+            Lower chase letters used for randomizaton
+            </summary>
+        </member>
+        <member name="F:Microsoft.Services.TestTools.UITesting.Html.StringCreator.Randomizer">
+            <summary>
+            Randomizer used by the create mathods
+            </summary>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.StringCreator.Create(System.String,System.Int32)">
+            <summary>
+            Create a random string using the source characters provided.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="length">The length.</param>
+            <returns>The randomized string</returns>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.StringCreator.CreateName">
+            <summary>
+            Creates a name. 8 chars.
+            </summary>
+            <returns>A random name, 8 chars.</returns>
+            <remarks>Uppercase, Lowercase, and International chars</remarks>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.StringCreator.CreateName(System.Int32)">
+            <summary>
+            Creates a name.
+            </summary>
+            <param name="length">The length.</param>
+            <returns>A random name</returns>
+            <remarks>Uppercase, Lowercase, and International chars</remarks>
+            <exception cref="T:System.ArgumentOutOfRangeException">Length must be greater than zero</exception>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.StringCreator.CreatePassword">
+            <summary>
+            Creates a password. 12 chars.
+            </summary>
+            <returns>A random, 12 chars, password</returns>
+            <remarks>Uppercase, Lowercase, Numbers, International and Special chars</remarks>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.StringCreator.CreatePassword(System.Int32)">
+            <summary>
+            Creates a password.
+            </summary>
+            <param name="length">The length.</param>
+            <returns>A random password</returns>
+            <remarks>Uppercase, Lowercase, Numbers International and Special chars</remarks>
+            <exception cref="T:System.ArgumentOutOfRangeException">Length must be greater than three</exception>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.StringCreator.CreateEmail">
+            <summary>
+            Creates an email address. 16 chars
+            </summary>
+            <returns>A random email address, 16 chars</returns>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.StringCreator.CreateEmail(System.Int32)">
+            <summary>
+            Creates an email address.
+            </summary>
+            <param name="length">The length.</param>
+            <returns>A random email address</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Length must be greater than five</exception>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.StringCreator.CreateAmount">
+            <summary>
+            Creates an amount. Two decimals.
+            </summary>
+            <returns>An amount. Less than 100</returns>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.StringCreator.CreateAmount(System.Int32,System.Int32)">
+            <summary>
+            Creates an amount.
+            </summary>
+            <param name="multiplyer">The multiplyer.</param>
+            <param name="decimals">The decimals.</param>
+            <returns>An amount</returns>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.StringCreator.CreateAmount(System.Int32,System.Int32,System.IFormatProvider)">
+            <summary>
+            Creates an amount.
+            </summary>
+            <param name="multiplyer">The multiplyer.</param>
+            <param name="decimals">The decimals.</param>
+            <param name="formatProvider">The format provider.</param>
+            <returns>An amount</returns>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.StringCreator.CreateNumeric">
+            <summary>
+            Creates a number. 4 digits
+            </summary>
+            <returns>A random 4 digit number</returns>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.StringCreator.CreateNumeric(System.Int32)">
+            <summary>
+            Creates a number.
+            </summary>
+            <param name="length">The length.</param>
+            <returns>A random number</returns>
+        </member>
+        <member name="T:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions">
+            <summary>
+              <see cref="T:Microsoft.VisualStudio.TestTools.UITesting.UITestControl"/> extension methods
+            </summary>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.Click(Microsoft.VisualStudio.TestTools.UITesting.UITestControl)">
+            <summary>
+            Clicks on the control.
+            </summary>
+            <param name="self">The control to click on</param>
+            <remarks>The method waits for control to exist and that it's clickable</remarks>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.Click(Microsoft.VisualStudio.TestTools.UITesting.UITestControl,System.Drawing.Point)">
+            <summary>
+            Clicks on the control.
+            </summary>
+            <param name="self">The control to click on</param>
+            <param name="relativeCoordinate">The relative coordinate.</param>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.Click(Microsoft.VisualStudio.TestTools.UITesting.UITestControl,System.Object)">
+            <summary>
+            Clicks on the matching control
+            </summary>
+            <param name="container">The container control.</param>
+            <param name="findCriterias">The find criterias.</param>
+            <example>
+            Initialize an anonymous type with your find criterias. 
+            The criterias should be any of the property names for the specific control.
+            <seealso cref="T:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlControl.PropertyNames"/>
+            <code>
+            //launch the browser
+            BrowserWindow browser = BrowserWindow.Launch(new Uri("..."));
+            //find a control with id "ButtonId" and then click on it
+            browser.Click(new { Id = "ButtonId" });
+            </code>
+            </example>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.ClickOnLink(Microsoft.VisualStudio.TestTools.UITesting.UITestControl,System.String)">
+            <summary>
+            Clicks on a <see cref="T:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlHyperlink"/> with the specified inner text.
+            </summary>
+            <param name="container">The container.</param>
+            <param name="text">The text.</param>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.ClickOnButton(Microsoft.VisualStudio.TestTools.UITesting.UITestControl,System.String)">
+            <summary>
+            Clicks on a button with the specified text.
+            </summary>
+            <param name="container">The container.</param>
+            <param name="text">The text.</param>
+            <remarks>
+            This method will fist search for a <see cref="T:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlButton"/> (HTML tag "button") with the specified text and click on it.
+            If no matching HtmlButton is found the method will instead search for a <see cref="T:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlInputButton"/> 
+            (HTML tag "input" with type attribute equal to "button").
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.Check(Microsoft.VisualStudio.TestTools.UITesting.UITestControl,System.String)">
+            <summary>
+            Checks a <see cref="T:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlCheckBox"/> with the specified Id.
+            </summary>
+            <param name="container">The container.</param>
+            <param name="id">The id.</param>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.Check(Microsoft.VisualStudio.TestTools.UITesting.UITestControl,System.Object)">
+            <summary>
+            Checks a <see cref="T:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlCheckBox"/> matching the specified criteras.
+            </summary>
+            <param name="container">The container.</param>
+            <param name="findCriterias">The find criteras</param>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.SetEditText(Microsoft.VisualStudio.TestTools.UITesting.UITestControl,System.Object,System.String)">
+            <summary>
+            Sets the text of the matching <see cref="T:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlEdit"/>.
+            </summary>
+            <param name="container">The container.</param>
+            <param name="findCriteria">The find criteria.</param>
+            <param name="text">The text.</param>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.SetEditText(Microsoft.VisualStudio.TestTools.UITesting.UITestControl,System.String,System.String)">
+            <summary>
+            Sets the text of the <see cref="T:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlEdit"/> with the specified Id.
+            </summary>
+            <param name="container">The container.</param>
+            <param name="id">The id.</param>
+            <param name="text">The text.</param>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.SetEditTexts(Microsoft.VisualStudio.TestTools.UITesting.UITestControl,System.Object)">
+            <summary>
+            Sets the text of multiple <see cref="T:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlEdit"/>'s.
+            </summary>
+            <param name="container">The container.</param>
+            <param name="fieldModel">The field model.</param>
+            <remarks>
+            This method can be usefull when filling out big forms.
+            The <paramref name="fieldModel"/> is an anonymous type (object) with properties matching the Id's 
+            of the <see cref="T:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlEdit"/>'s you want to set the text on.
+            </remarks>
+            <example>
+            Sets all the <see cref="T:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlEdit"/> texts specified.
+            The property name is the HtmlEdit control id
+            <code>
+            <![CDATA[
+            browser.SetEditTexts(new {
+                FirstName = "First",
+                LastName  = "Last"
+            });
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.Select(Microsoft.VisualStudio.TestTools.UITesting.UITestControl,System.String,System.Int32)">
+            <summary>
+            Selects the item with the specified index in the <see cref="T:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlComboBox"/> with the specified id.
+            </summary>
+            <param name="container">The container.</param>
+            <param name="id">The id.</param>
+            <param name="itemIndex">Index of the item.</param>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.Select(Microsoft.VisualStudio.TestTools.UITesting.UITestControl,System.String,System.String)">
+            <summary>
+            Selects the item with the specified text in the <see cref="T:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlComboBox"/> with the specified id.
+            </summary>
+            <param name="container">The container.</param>
+            <param name="id">The id.</param>
+            <param name="item">Value of the item.</param>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.Find(Microsoft.VisualStudio.TestTools.UITesting.UITestControl,System.String)">
+            <summary>
+            Finds the <see cref="T:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlControl"/> with the specified Id.
+            </summary>
+            <param name="container">The container.</param>
+            <param name="id">The id.</param>
+            <returns>The matching <see cref="T:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlControl"/></returns>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.Find(Microsoft.VisualStudio.TestTools.UITesting.UITestControl,System.Object)">
+            <summary>
+            Finds the <see cref="T:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlControl"/> matching the specified criterias.
+            </summary>
+            <param name="container">The container.</param>
+            <param name="findCriteria">The criterias.</param>
+            <returns>The matching <see cref="T:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlControl"/></returns>
+            <example>
+            Find all A elements
+            <code>
+            <![CDATA[
+            HtmlControl control = browser.Find(new { TagName = "A" });
+            ]]>
+            </code>
+            </example>
+            <remarks>
+            The property names on the find criteria object must to match a property name
+            defined in the accompanying <see cref="T:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlControl.PropertyNames"/> object.
+            </remarks>
+            <seealso cref="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.Filter``1(``0,System.Object)"/>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.Find``1(Microsoft.VisualStudio.TestTools.UITesting.UITestControl)">
+            <summary>
+            Finds a control of the specified type.
+            </summary>
+            <typeparam name="T">The type of the control to find</typeparam>
+            <param name="container">The container.</param>
+            <returns>The first HtmlControl of the specified type</returns>
+            <example>
+            Find the (first) HtmlTable on the page
+            <code>
+            <![CDATA[
+            HtmlTable onlyTable = browser.Find<HtmlTable>();
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.Find``1(Microsoft.VisualStudio.TestTools.UITesting.UITestControl,System.String)">
+            <summary>
+            Finds the control with the specified id.
+            </summary>
+            <typeparam name="T">The type of the control to find</typeparam>
+            <param name="container">The container.</param>
+            <param name="id">The id.</param>
+            <returns>The found control</returns>
+            <remarks>
+            This method will search for controls which id contains the specified id.
+            This is especially convenient when dealing with ASP.NET generated id's.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.Find``1(Microsoft.VisualStudio.TestTools.UITesting.UITestControl,System.String,Microsoft.VisualStudio.TestTools.UITesting.PropertyExpressionOperator)">
+            <summary>
+            Finds the control with the specified id.
+            </summary>
+            <typeparam name="T">The type of the control to find</typeparam>
+            <param name="container">The container.</param>
+            <param name="id">The id.</param>
+            <param name="expressionOperator">The expression operator.</param>
+            <returns>The found control</returns>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.Find``1(Microsoft.VisualStudio.TestTools.UITesting.UITestControl,System.Object)">
+            <summary>
+            Finds the control matching the specified criterias.
+            </summary>
+            <typeparam name="T">The type of the control to find</typeparam>
+            <param name="container">The container.</param>
+            <param name="findCriterias">The find criterias.</param>
+            <returns>The found control</returns>
+            <example>
+            Find and click on the button with id 'MyButton'
+            <code>
+            <![CDATA[
+            HtmlButton button = browser.Find<HtmlButton>(new { Id = "MyButton" });
+            button.Click();
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.Find``1(Microsoft.VisualStudio.TestTools.UITesting.UITestControl,System.Object,Microsoft.VisualStudio.TestTools.UITesting.PropertyExpressionOperator)">
+            <summary>
+            Finds the control matching the specified criterias.
+            </summary>
+            <typeparam name="T">The type of the control to find</typeparam>
+            <param name="container">The container.</param>
+            <param name="findCriterias">The find criterias.</param>
+            <param name="expressionOperator">The expression operator.</param>
+            <returns>The found control</returns>
+            <example>
+            Find and click on the button which id contains 'MyButton'
+            <code>
+            <![CDATA[
+            HtmlButton button = browser.Find<HtmlButton>(new { Id = "MyButton" }, PropertyExpressionOperator.Contains);
+            button.Click();
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.Find``1(Microsoft.VisualStudio.TestTools.UITesting.UITestControl,System.String,System.String)">
+            <summary>
+            Finds the control with a <see cref="F:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlControl.PropertyNames.ControlDefinition"/> 
+            containing the specified attribute with the specified value.
+            </summary>
+            <typeparam name="T">The type of the control to find</typeparam>
+            <param name="container">The container.</param>
+            <param name="attributeName">Name of the attribute.</param>
+            <param name="attributeValue">The attribute value.</param>
+            <returns>The found control</returns>
+            <remarks>
+            This method is primarily used for attributes that're not available in the PropertyNames collection.
+            For instance "data dash" attributes (data-*).
+            </remarks>
+            <example>
+            Find a control whith the 'data-vslmsg-for' attribute set to 'FieldName'
+            <code>
+            <![CDATA[
+            HtmlSpan validationSpan = browser.Find<HtmlSpan>("data-valmsg-for", "FieldName");
+            string validationMessage = validationSpan.InnerText;
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.IfExists``1(Microsoft.VisualStudio.TestTools.UITesting.UITestControl,System.Object,System.Action{``0})">
+            <summary>
+            Performs the provided acton if the specified control exists
+            </summary>
+            <typeparam name="T">The type of the control to find</typeparam>
+            <param name="container">The container.</param>
+            <param name="findCriterias">The find criterias.</param>
+            <param name="doThis">The action to perform</param>
+            <returns>True if a matching control was found. Otherwise false.</returns>
+            <example>
+            If the log off link is found - click on it
+            <code>
+            <![CDATA[
+            browser.IfExists<HtmlHyperlink>(new { InnerText = "Log Off"}, e => e.Click());
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.Instance``1(``0,System.Int32)">
+            <summary>
+            Returns the specified control instance
+            </summary>
+            <typeparam name="T">The type of the element</typeparam>
+            <param name="element">The element.</param>
+            <param name="instanceIndex">Index of the instance.</param>
+            <returns>The control at the specified index in the result list</returns>
+            <remarks>
+            When the find method finds multiple matching controls this method 
+            can be used to retrieve a single control from the collection
+            </remarks>
+            <example>
+            Sets the selected item of the 2nd ComboBox on the page
+            <code>
+            <![CDATA[
+            browser
+                .Find<HtmlComboBox>()
+                .Instance(2)
+                .SelectedItem = "SelectMe";
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.Filter``1(``0,System.Object)">
+            <summary>
+            Adds the specified filter properties to the element
+            </summary>
+            <typeparam name="T">The type of the element</typeparam>
+            <param name="element">The element.</param>
+            <param name="filterModel">The filter model.</param>
+            <returns>The element matching the filter properties</returns>
+            <remarks>Applied after search properties. Must be predecessed by Find.</remarks>
+            <example>
+            Since row and column index aren't part of the PropertyNames type for <see cref="T:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlCell"/>,
+            Filter needs to be used in order to find a specific table cell.
+            <code>
+            <![CDATA[
+            browser
+                .Find<HtmlCell>()
+                .Filter(new {
+                    RowIndex    = "3"
+                    ColumnIndex = "2"
+                });
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.GetInnerText(Microsoft.VisualStudio.TestTools.UITesting.UITestControl)">
+            <summary>
+            Gets the inner text of the control.
+            </summary>
+            <param name="self">The self.</param>
+            <returns>The inner text of the control.</returns>
+            <remarks>If the control isn't a <see cref="T:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlControl"/>, <see cref="F:System.String.Empty"/> will be returned</remarks>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.UITestControlExtensions.GetValueInCell(Microsoft.VisualStudio.TestTools.UITesting.HtmlControls.HtmlTable,System.Int32,System.Int32)">
+            <summary>
+            Gets the inner text of a table cell
+            </summary>
+            <param name="table">The table</param>
+            <param name="row">The row index</param>
+            <param name="column">The column index</param>
+            <returns>The inner text</returns>
+        </member>
+        <member name="T:Microsoft.Services.TestTools.UITesting.Html.ClearCookiesAttribute">
+            <summary>
+            Decorate your <see cref="T:Microsoft.Services.TestTools.UITesting.Html.Page"/> with this attribute to tell 
+            the Page launcher to clear the browser cookies prior page launch.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Services.TestTools.UITesting.Html.ClearCacheAttribute">
+            <summary>
+            Decorate your <see cref="T:Microsoft.Services.TestTools.UITesting.Html.Page"/> with this attribute to tell 
+            the Page launcher to clear the browser cache prior page launch.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Services.TestTools.UITesting.Html.BaseUriAttribute">
+            <summary>
+            Use the BaseUriAttribute to specify an alternative base uri to be used by the <see cref="T:Microsoft.Services.TestTools.UITesting.Html.Page"/> launcher.
+            </summary>
+            <example>
+            The following example will pass 'Shop' to the exported <see cref="T:Microsoft.Services.TestTools.UITesting.Html.IWebUITestConfiguration"/> in the test project.
+            <code>
+            [BaseUriAttribute("Shop")]
+            public class Shop : Page {
+            //impl omitted
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.BaseUriAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Services.TestTools.UITesting.Html.BaseUriAttribute"/> class.
+            </summary>
+            <param name="name">The name of the Uri to use</param>
+        </member>
+        <member name="P:Microsoft.Services.TestTools.UITesting.Html.BaseUriAttribute.BaseUriName">
+            <summary>
+            Gets the name of the base Uri.
+            </summary>
+            <value>
+            The name of the base Uri.
+            </value>
+        </member>
+        <member name="T:Microsoft.Services.TestTools.UITesting.Html.EntryUriAttribute">
+            <summary>
+            Decorate your <see cref="T:Microsoft.Services.TestTools.UITesting.Html.Page"/> with this attribute to set its relative entry Uri.
+            </summary>
+            <remarks>
+            The base Uri is handeled by the exported <see cref="T:Microsoft.Services.TestTools.UITesting.Html.IWebUITestConfiguration"/> type
+            </remarks>
+            <example>
+            The page launcher will navigate to {baseUri}/Account/LogOn
+            <code>
+            [EntryUri("/Account/LogOn")]
+            public class LogOn : Page {
+            //impl omitted
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.EntryUriAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Services.TestTools.UITesting.Html.EntryUriAttribute"/> class.
+            </summary>
+            <param name="relativeUri">The relative entry Uri.</param>
+        </member>
+        <member name="P:Microsoft.Services.TestTools.UITesting.Html.EntryUriAttribute.RelativeUri">
+            <summary>
+            Gets the relative Uri.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Services.TestTools.UITesting.Html.RelativeUri">
+            <summary>
+            A relative <see cref="T:System.Uri"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Services.TestTools.UITesting.Html.RelativeUri.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Services.TestTools.UITesting.Html.RelativeUri"/> class.
+            </summary>
+            <param name="relativeUri">The relative Uri.</param>
+        </member>
+    </members>
+</doc>

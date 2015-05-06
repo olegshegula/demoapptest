@@ -108,8 +108,7 @@ namespace CodedUITestProject
         [Description("Test7: This test will fail")]
 		public void EditUserNameFailedTest()
 		{
-            Playback.PlaybackSettings.LoggerOverrideState = HtmlLoggerState.ErrorAndWarningOnlySnapshot;
-            Playback.PlaybackSettings.SearchTimeout = 100;
+            Playback.PlaybackSettings.LoggerOverrideState = HtmlLoggerState.AllActionSnapshot;
 			LunchApplication()
 				.SetFocus()
 				.LoginAs("demo", "demo123")

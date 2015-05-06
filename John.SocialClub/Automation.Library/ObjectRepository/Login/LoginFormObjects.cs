@@ -1,8 +1,10 @@
 ﻿using Automation.Library.Logic.Base;
 using Microsoft.VisualStudio.TestTools.UITesting;
 using Microsoft.VisualStudio.TestTools.UITesting.WinControls;
+using Microsoft.Services.TestTools.UITesting.Html;
 
 namespace Automation.Library.ObjectRepository.Login
+
 {
 	public class LoginFormObjects : BaseLogic
 	{
@@ -119,7 +121,16 @@ namespace Automation.Library.ObjectRepository.Login
                 return _closeLoginMessageBttn;
             }
         }
+
+        protected UITestControl LoginBttnWnd
+        {
+            get
+            {
+                return _loginBttnWnd ?? (_loginBttnWnd = UITestControl.Desktop.Find<WinWindow>(new { ControlName = "btnLogin" }));
+            }
+        }
         #region Private Variables
+        private UITestControl _loginBttnWnd;
         private WinButton _closeLoginMessageBttn;
         private WinWindow _loginPopUpForm;
 		private WinWindow _parentLoginForm;
@@ -128,6 +139,6 @@ namespace Automation.Library.ObjectRepository.Login
 		private WinEdit _userPasswordFld;
 		private WinButton _loginBttn;
         private WinText _loginStatusMessage;
-        #endregion Private Variables
-    }
+	    #endregion Private Variables
+	}
 }

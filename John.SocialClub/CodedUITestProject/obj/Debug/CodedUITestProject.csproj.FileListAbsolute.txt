@@ -47,3 +47,6 @@ C:\demoapptest\John.SocialClub\CodedUITestProject\bin\Debug\Automation.Library.p
 C:\demoapptest\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.csprojResolveAssemblyReference.cache
 C:\demoapptest\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.dll
 C:\demoapptest\John.SocialClub\CodedUITestProject\obj\Debug\CodedUITestProject.pdb
+C:\demoapptest\John.SocialClub\CodedUITestProject\bin\Debug\Microsoft.Services.TestTools.UITesting.Html.dll
+C:\demoapptest\John.SocialClub\CodedUITestProject\bin\Debug\Microsoft.Services.TestTools.UITesting.Html.pdb
+C:\demoapptest\John.SocialClub\CodedUITestProject\bin\Debug\Microsoft.Services.TestTools.UITesting.Html.xml
