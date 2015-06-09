@@ -117,7 +117,7 @@ namespace CodedUITestProject
 				.EnterSalary("1000")
 				.ChooseSearchMaritalStatus("Single")
 				.ClickSearch()
-				.EnterMemberName("update test")
+				.EnterMemberName("")
 				.ClickUpdateButton()
 				.IsUpdateMessageCorrect("Member details updated successfully");
 		}

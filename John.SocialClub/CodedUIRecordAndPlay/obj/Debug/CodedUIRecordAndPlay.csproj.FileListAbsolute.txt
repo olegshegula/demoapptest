@@ -1,0 +1,5 @@
+C:\demoapptest\John.SocialClub\CodedUIRecordAndPlay\bin\Debug\CodedUIRecordAndPlay.dll
+C:\demoapptest\John.SocialClub\CodedUIRecordAndPlay\bin\Debug\CodedUIRecordAndPlay.pdb
+C:\demoapptest\John.SocialClub\CodedUIRecordAndPlay\obj\Debug\CodedUIRecordAndPlay.csprojResolveAssemblyReference.cache
+C:\demoapptest\John.SocialClub\CodedUIRecordAndPlay\obj\Debug\CodedUIRecordAndPlay.dll
+C:\demoapptest\John.SocialClub\CodedUIRecordAndPlay\obj\Debug\CodedUIRecordAndPlay.pdb

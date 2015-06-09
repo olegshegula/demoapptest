@@ -50,6 +50,38 @@ namespace CalculatorTest
             _app.Close();
         }
 
+        [TestMethod]
+        public void Test2()
+        {
+            //run application
+            ApplicationUnderTest _app = ApplicationUnderTest.Launch("C:\\Windows\\System32\\calc.exe", "%windir%\\System32\\calc.exe");
+            WinWindow calWindow = new WinWindow();
+            calWindow.SearchProperties[WinWindow.PropertyNames.Name] = "Calculator";
+            calWindow.SetFocus();
+
+            WinMenuItem helpMenu = new WinMenuItem(calWindow);
+            WinMenuItem aboutSubmenu = new WinMenuItem(calWindow);
+            WinWindow aboutWnd = new WinWindow();
+            WinTitleBar title = new WinTitleBar(aboutWnd);
+
+            
+            helpMenu.SearchProperties[WinMenuItem.PropertyNames.Name] = "Help";
+            Mouse.Click(helpMenu);
+            
+            aboutSubmenu.SearchProperties[WinMenuItem.PropertyNames.Name] = "About Calculator";
+            aboutSubmenu.DrawHighlight();
+            Mouse.Click(aboutSubmenu);
+            Playback.Wait(2000);
+
+            aboutWnd.SearchProperties[WinWindow.PropertyNames.Name] = "About Calculator";
+            title.SearchProperties[WinTitleBar.PropertyNames.ControlType] = "TitleBar";
+            title.DrawHighlight();
+
+            Assert.AreEqual("About Calculator", title.DisplayText);
+           
+            _app.Close();
+        }
+
         #region Additional test attributes
 
         // You can use the following additional attributes as you write your tests:

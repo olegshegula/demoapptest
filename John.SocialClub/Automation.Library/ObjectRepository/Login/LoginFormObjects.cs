@@ -2,7 +2,6 @@
 using Microsoft.VisualStudio.TestTools.UITesting;
 using Microsoft.VisualStudio.TestTools.UITesting.WinControls;
 using Microsoft.Services.TestTools.UITesting.Html;
-
 namespace Automation.Library.ObjectRepository.Login
 
 {

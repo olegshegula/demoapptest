@@ -70,11 +70,9 @@
     <Compile Include="Common\Tools.cs" />
     <Compile Include="Logic\Base\BaseLogic.cs" />
     <Compile Include="Logic\Login\LoginForm.cs" />
-    <Compile Include="Logic\Login\LoginPopUpForm.cs" />
     <Compile Include="Logic\Membership\NewRegistrationTab.cs" />
     <Compile Include="ObjectRepository\Base\ApplicationBaseObjects.cs" />
     <Compile Include="ObjectRepository\Login\LoginFormObjects.cs" />
-    <Compile Include="ObjectRepository\Login\LoginPopUpFormObject.cs" />
     <Compile Include="ObjectRepository\Membership\NewRegistrationTabObjects.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
